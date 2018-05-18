@@ -3,7 +3,7 @@
 * Python back-end (game logic)
 * JavaScript (+ HTML/CSS) front-end (GUI)
 
-## Client vs Server
+## Client-Server interaction
 * Client shows a GUI
 * Interaction with the GUI sends event to the server
 * Server processes action based on event
@@ -65,3 +65,8 @@
 * Army card - type = 'army', troop ('infantry', 'cavalry', 'artillery', 'wildcard')
 * Mission card - type = 'mission', conditions
 * Condition - type ('destroy', 'conquer', 'occupy'), target (if type == 'destroy' -> Team; if type == 'conquer' -> Continent; if type == 'occupy' -> Territory + number of troops
+* Gui - instantiates and holds the different GUI elements
+* MessagePane - GUI elements for displaying and sending messages
+* MapPane - GUI for displaying and interacting with territories
+* CardPane - GUI for displaying the current army cards and mission card
+There are probably more GUI elements needed
