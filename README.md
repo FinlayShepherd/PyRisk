@@ -31,6 +31,9 @@ Issue descriptions must follow the format shown below:
 #### How to replicate:
 * First do z then call function
 
+#### Additional info
+* xyz
+
 ## Running locally
 
 TBD
