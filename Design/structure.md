@@ -35,15 +35,15 @@ Game loop checks for updates every x seconds
 * The current teams
 * The current players
 * The territories (includes neighbouring territories)
-* The number of troops in each territory
-* The player whose troops are in the territory
+* The number of armies in each territory
+* The player whose armies are in the territory
 * The teams' mission cards
 * The public messages
 * The player who sent the public message
 * The private messages
 * The player who sent the private message
 * The player/team who received the private message
-* The total number of troops for each player (needs to be validated to prevent people from cheating)
+* The total number of armies for each player (needs to be validated to prevent people from cheating)
 * Current battle dice rolls
 * The results of battles
 
@@ -51,13 +51,13 @@ Game loop checks for updates every x seconds
 * The current teams
 * The current players
 * The territories (includes neighbouring territories)
-* The number of troops in each territory
-* The team whose troops are in the territory
+* The number of armies in each territory
+* The team whose armies are in the territory
 * The public messages
 * The player who sent the public message
 * The player who sent the private message
 * The player/team who received the private message
-* The total number of troops for each player (needs to be validated to prevent people from cheating)
+* The total number of armies for each player (needs to be validated to prevent people from cheating)
 * The results of battles
 
 ### Private info (teams)
@@ -70,23 +70,23 @@ Game loop checks for updates every x seconds
 * The active team (the team whose turn it is)
 * The current players
 * The territories (includes neighbouring territories)
-* The number of troops in each territory
-* The player whose troops are in the territory
+* The number of armies in each territory
+* The player whose armies are in the territory
 * The public messages
 * The player who sent the public message
-* The total number of troops for each player (needs to be validated to prevent people from cheating)
+* The total number of armies for each player (needs to be validated to prevent people from cheating)
 * The results of battles
 
 ## Classes
 * Config - holds all information needed to instantiate board
 * Board - Used to separate code out from GUI. Holds active team (whose turn it is)
 * Continent - Holds territories, name of continent, current occupying teams, current bonus receiver (Team or 'contested')
-* Territory - Holds number of troops, current occupying team, neighbouring territories
+* Territory - Holds number of armies, current occupying team, neighbouring territories
 * Player - Holds name, ID, public messages sent?, private messages sent?, private messages received?
-* Team - Holds players, colour, occupied territories, number of troops, mission card, army cards, current battle?, private messages received?
-* Army card - type = 'army', troop ('infantry', 'cavalry', 'artillery', 'wildcard')
+* Team - Holds players, colour, occupied territories, number of armies, mission card, army cards, current battle?, private messages received?
+* Army card - type = 'army', army ('infantry', 'cavalry', 'artillery', 'wildcard')
 * Mission card - type = 'mission', conditions
-* Condition - type ('destroy', 'conquer', 'occupy'), target (if type == 'destroy' -> Team; if type == 'conquer' -> Continent; if type == 'occupy' -> Territory + number of troops
+* Condition - type ('destroy', 'conquer', 'occupy'), target (if type == 'destroy' -> Team; if type == 'conquer' -> Continent; if type == 'occupy' -> Territory + number of armies
 * Gui - instantiates and holds the different GUI elements
 * MessagePane - GUI elements for displaying and sending messages
 * MapPane - GUI for displaying and interacting with territories
