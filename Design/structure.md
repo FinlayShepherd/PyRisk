@@ -1,14 +1,35 @@
 # Structure
 ## High-level
+Server can be hosted on Nick's domain
 * Python back-end (game logic)
 * JavaScript (+ HTML/CSS) front-end (GUI)
+* MySQL database
 
 ## Client-Server interaction
+#### Login
+* Client shows login GUI
+* Username and password are sent to the server
+* Server encrypts username and password and requests the encrypted details?
+* If valid, logs in user and presents 'Make game/Join game' GUI
+* If invalid, inform
+
+#### Make game
+* Can either select a new game or the most recent game (saved to profile?)
+* Either way, new game server is started and client GUI is displayed - if most recent game, loads using saved config, if new game, loads using default config
+* Client GUI lets people team up and choose colours in pre-game state
+
+#### Join game
+* Client sends join request to server
+* If server has game process running (in pre-game state) then the client is allowed to join
+* Client GUI lets people team up and choose colours in pre-game state
+
+#### Gameplay
 * Client shows a GUI
 * Interaction with the GUI sends event to the server
 * Server processes action based on event
 * Server sends response to relevant* clients (* in private messages, not all clients would see an update)
 * Clients update GUI based on event
+Game loop checks for updates every x seconds
 
 ### Server needs to track:
 * The current teams
@@ -46,6 +67,7 @@
 
 ### Public info
 * The current teams
+* The active team (the team whose turn it is)
 * The current players
 * The territories (includes neighbouring territories)
 * The number of troops in each territory
@@ -57,7 +79,7 @@
 
 ## Classes
 * Config - holds all information needed to instantiate board
-* Board - Used to separate code out from GUI
+* Board - Used to separate code out from GUI. Holds active team (whose turn it is)
 * Continent - Holds territories, name of continent, current occupying teams, current bonus receiver (Team or 'contested')
 * Territory - Holds number of troops, current occupying team, neighbouring territories
 * Player - Holds name, ID, public messages sent?, private messages sent?, private messages received?
