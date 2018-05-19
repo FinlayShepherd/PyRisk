@@ -58,7 +58,7 @@
 ## Classes
 * Config - holds all information needed to instantiate board
 * Board - Used to separate code out from GUI
-* Continent - Holds territories, name of continent, current occupying team, current bonus receiver (Team or 'contested')
+* Continent - Holds territories, name of continent, current occupying teams, current bonus receiver (Team or 'contested')
 * Territory - Holds number of troops, current occupying team, neighbouring territories
 * Player - Holds name, ID, public messages sent?, private messages sent?, private messages received?
 * Team - Holds players, colour, occupied territories, number of troops, mission card, army cards, current battle?, private messages received?
