@@ -31,4 +31,8 @@ class Board:
 
     def init_players(self):
         players = []
-        for i in range(self.player_number)
+        for player_colour in list(self.config.players.keys()):
+            player_name = self.config.players[player_colour]
+            player = Player.__init__(player_name, player_colour)
+            players.append(player)
+        return players
